@@ -1,0 +1,25 @@
+@model List<Avaliacaolp3.ViewModels.LojaViewModel>
+@{
+    ViewData["Title"] = "Lojas";
+}
+
+<h1>Lojas</h1>
+
+@if(Model.Count == 0)
+{
+    <p>Sem registro lojas cadastradas!</p>
+} 
+else
+{
+    @foreach(var loja in Model)
+    {
+        <h3>@loja.Nome</h3>
+
+        <p>Id: @loja.Id</p>
+        <p>Piso: @loja.Piso</p>
+        <p>Descrição: @loja.Descricao</p>
+        <p>Tipo: @loja.Tipo</p>
+        <p>E-mail: @loja.Email</p>
+        <hr>
+    }
+}

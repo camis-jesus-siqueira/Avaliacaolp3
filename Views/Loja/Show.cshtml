@@ -1,0 +1,15 @@
+@model Avaliacaolp3.ViewModels.LojaViewModel;
+@{
+    ViewData["Title"] = "Loja";
+}
+
+<h1>Loja @Model.Id</h1>
+
+<h3>@Model.Nome</h3>
+
+<p>Id: @Model.Id</p>
+<p>Piso: @Model.Piso</p>
+<p>Descrição: @Model.Descricao</p>
+<p>Tipo: @Model.Tipo</p>
+<p>E-mail: @Model.Email</p>
+<a href="/Loja/DeleteLoja/@Model.Id"><button>Deletar Loja</button></a>
