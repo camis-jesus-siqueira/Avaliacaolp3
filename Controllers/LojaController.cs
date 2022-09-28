@@ -9,7 +9,7 @@ public class LojaController : Controller
 
     public IActionResult Index() => View(lojas);
 
-    public IActionResult Admin() => View(lojas);
+    public IActionResult Adm() => View(lojas);
 
     public IActionResult Show(int id) => View(lojas[id-1]);
 
@@ -20,7 +20,7 @@ public class LojaController : Controller
         if (lojas.Any(y => y.Nome == nome))
         {
             TempData["NameError"] = "Loja localizada com esse nome!";
-            return RedirectToAction("Admin");
+            return RedirectToAction("Adm");
         } 
         else
         {
@@ -28,7 +28,7 @@ public class LojaController : Controller
 
             lojas.Add(new LojaViewModel(descricao,email, id, nome, piso, tipo));
 
-            return RedirectToAction("Admin");
+            return RedirectToAction("Adm");
         }
     }
 
@@ -36,6 +36,6 @@ public class LojaController : Controller
     {
         lojas.RemoveAll(x => x.Id == id);
 
-        return RedirectToAction("Admin");
+        return RedirectToAction("Adm");
     }
 }
